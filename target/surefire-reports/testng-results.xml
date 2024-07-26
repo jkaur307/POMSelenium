@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-07-25T12:05:36 EDT" name="Suite" finished-at="2024-07-25T12:06:31 EDT" duration-ms="55016">
+    <groups>
+    </groups>
+    <test started-at="2024-07-25T12:05:36 EDT" name="Test" finished-at="2024-07-25T12:06:31 EDT" duration-ms="55016">
+      <class name="Testcases.LoginToYourAccount">
+        <test-method signature="loginToYourAccount()[pri:0, instance:Testcases.LoginToYourAccount@40ef3420]" started-at="2024-07-25T12:06:09 EDT" name="loginToYourAccount" finished-at="2024-07-25T12:06:31 EDT" duration-ms="22409" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToYourAccount -->
+      </class> <!-- Testcases.LoginToYourAccount -->
+      <class name="Testcases.NewUserSignup">
+        <test-method is-config="true" signature="setupmethod()[pri:0, instance:Testcases.NewUserSignup@3911c2a7]" started-at="2024-07-25T12:05:36 EDT" name="setupmethod" finished-at="2024-07-25T12:05:44 EDT" duration-ms="7474" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupmethod -->
+        <test-method signature="newUserSignup()[pri:0, instance:Testcases.NewUserSignup@3911c2a7]" started-at="2024-07-25T12:05:44 EDT" name="newUserSignup" finished-at="2024-07-25T12:06:09 EDT" duration-ms="24843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newUserSignup -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Testcases.NewUserSignup@3911c2a7]" started-at="2024-07-25T12:06:09 EDT" name="teardown" finished-at="2024-07-25T12:06:09 EDT" duration-ms="229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- Testcases.NewUserSignup -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
