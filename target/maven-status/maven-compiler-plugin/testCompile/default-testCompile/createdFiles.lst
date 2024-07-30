@@ -1,2 +1,4 @@
 Testcases\NewUserSignup.class
 Testcases\LoginToYourAccount.class
+Testcases\Addtocartest.class
+Utilities\ExtentReportManager.class
