@@ -1,4 +1,7 @@
 package Testcases;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -7,6 +10,7 @@ import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
+import Utilities.ConfigReader;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.SignupPage;
@@ -15,16 +19,26 @@ public class NewUserSignup {
 	
 	public WebDriver driver;
 	
+	public ConfigReader config;
+	public Properties prop;
+	public HomePage objHomepage;
+	public LoginPage objsignupPgae;
+	public 	SignupPage objSignupPage;
+	
 	@BeforeMethod
-	public void setupmethod() {
+	public void setupmethod() throws IOException {
+		config =new ConfigReader();
+		prop=config.initProp();
 		
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("https://automationexercise.com/");
+	//	driver.get("https://automationexercise.com/");
+		System.out.println(prop.getProperty("url"));
+		driver.get(prop.getProperty("url"));
 		
 	}
 	
-	
+
 	
 	@Test
 	public void newUserSignup() throws InterruptedException {
@@ -32,14 +46,14 @@ public class NewUserSignup {
 		Faker faker=new Faker();
 
 		Thread.sleep(5000);
-		HomePage objHomepage=new HomePage(driver);
+		objHomepage=new HomePage(driver);
 		objHomepage.clickSignuplink();
-		LoginPage objsignupPgae=new LoginPage(driver);
+		objsignupPgae=new LoginPage(driver);
 		objsignupPgae.enterName(faker.name().username());
 		objsignupPgae.enterEmailID(faker.internet().safeEmailAddress());
 		objsignupPgae.clickSignup();
 		Thread.sleep(5000);
-		SignupPage objSignupPage=new SignupPage(driver);
+		objSignupPage=new SignupPage(driver);
 		objSignupPage.clickGender1();
 		objSignupPage.enterPassword("Hello123*");
 		objSignupPage.enterDays("1");
