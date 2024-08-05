@@ -2,6 +2,8 @@ package Testcases;
 import java.io.IOException;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -25,6 +27,8 @@ public class NewUserSignup {
 	public LoginPage objsignupPgae;
 	public 	SignupPage objSignupPage;
 	
+	public  Logger  logger;
+	
 	@BeforeMethod
 	public void setupmethod() throws IOException {
 		config =new ConfigReader();
@@ -36,6 +40,9 @@ public class NewUserSignup {
 		System.out.println(prop.getProperty("url"));
 		driver.get(prop.getProperty("url"));
 		
+		///  logs
+		logger=LogManager.getLogger(this.getClass());
+		
 	}
 	
 
@@ -43,6 +50,7 @@ public class NewUserSignup {
 	@Test
 	public void newUserSignup() throws InterruptedException {
 		
+		logger.info("i am  in  new user signnup  method");
 		Faker faker=new Faker();
 
 		Thread.sleep(5000);
@@ -60,6 +68,11 @@ public class NewUserSignup {
 		objSignupPage.enterMonths("12");
 		objSignupPage.enterYears("2024");
 		objSignupPage.enterFirstName(faker.name().firstName());
+
+		logger.info("First Name"+faker.name().firstName());
+
+		
+		
 		objSignupPage.enterLastName(faker.name().lastName());
 		objSignupPage.enterCompany("walmart");
 		objSignupPage.enterAddress1(faker.address().fullAddress());
@@ -71,7 +84,7 @@ public class NewUserSignup {
 		objSignupPage.clickCreateAccount();
 		
 		Thread.sleep(5000);
-		
+		logger.info("ennd ing this test case");
 		
 	
 	}
